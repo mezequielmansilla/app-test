@@ -1,0 +1,11 @@
+<div class="users-container">
+  <h1 class="title">Users</h1>
+  <div class="search-container">
+      <input type="text" id="searchTerm" placeholder="Search users" [(ngModel)]="searchTerm" />
+  </div>
+  <div class="user-list">
+    <div class="user-item-container" *ngFor="let user of (filteredUsers$ | async)">
+        <app-user-item [user]="user"/>
+    </div>
+  </div>
+</div>

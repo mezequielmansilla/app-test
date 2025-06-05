@@ -1,0 +1,25 @@
+.user-item {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  gap: 1rem;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+
+  .field {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    label {
+        font-weight: 600;
+    }
+  }
+
+ 
+}
+ @media only screen and (max-width: 600px) {
+    .user-item {
+        flex-direction: column;
+    }
+  }
