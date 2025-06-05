@@ -13,6 +13,8 @@ export class UsersComponent implements OnInit {
   allUsers: User[] = [];
   searchTerm: string = '';
 
+  loading = false;
+
   private _filterUsers = new BehaviorSubject<User[]>([]);
   set filteredUsers(users: User[]) {
     this._filterUsers.next(users);
@@ -32,6 +34,7 @@ export class UsersComponent implements OnInit {
 
   constructor(private userService: UserService) {}
   ngOnInit() {
+    this.loading = true;
     this.userService.getUsers().subscribe((users: any) => {
       this.allUsers = users;
       this.filteredUsers = this.allUsers;
